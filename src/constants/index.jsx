@@ -8,15 +8,15 @@ const K = {
         },
         {
             name: "About",
-            path: "/about-us"
+            path: "#about-us"
         },
         {
             name: "Events",
-            path: "/event-calendar"
+            path: "/events"
         },
         {
             name: "Contact",
-            path: "/contact-us"
+            path: "#contact-us"
         },
     ],
 };

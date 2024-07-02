@@ -2,10 +2,9 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import './App.css'
 import RootLayout from './layouts/rootLayout';
 import LandingPage from './pages/Landing'
-import About from './pages/Landing/components/about';
-import EventsCalendar from './pages/Landing/components/eventsCalendar';
-import UpcomingEvents from './pages/Landing/components/upcomingEvents';
-import ContactUs from "./pages/ContactUs"
+import Events from './pages/Events';
+import CreateEvents from './pages/CreateEvents';
+import ManageEvents from './pages/ManageEvents';
 
 function App() {
   const router = createBrowserRouter([
@@ -18,21 +17,19 @@ function App() {
           element: <LandingPage/>
         },
         {
-          path: "about-us",
-          element: <About/>
+          path: "events",
+          element: <Events/>
         },
         {
-          path: "event-calendar",
-          element: <EventsCalendar/>
-        },
+          path: "create-events",
+          element: <CreateEvents/>
+        }, 
         {
-          path: "upcoming-events",
-          element: <UpcomingEvents/>
-        },
-        {
-          path: "contact-us",
-          element: <ContactUs/>
-        },
+          path: "manage-events",
+          element: <ManageEvents/>
+        }
+     
+   
       ]
     }
   ])
