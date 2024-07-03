@@ -1,8 +1,10 @@
-import React from 'react'
+import Form from './Landing/components/form'
 
 const CreateEvents = () => {
   return (
-    <div>CreateEvents</div>
+    <div className='flex px-16 py-10'>
+      <Form />
+    </div>
   )
 }
 

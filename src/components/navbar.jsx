@@ -4,7 +4,7 @@ import K from "../constants"
 
 const Navbar = () => {
   return (
-    <div className="flex w-full justify-between px-16 bg-slate-500 py-6 items-center">
+    <div className="flex w-full justify-between px-16 py-6 items-center">
       <span>logo</span>
       <div className="flex gap-x-10 items-center">
         {

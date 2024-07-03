@@ -1,6 +1,9 @@
+
 const Hero = () => {
   return (
-    <div >Hero</div>
+    <div className="">
+    
+    </div>
   )
 }
 
