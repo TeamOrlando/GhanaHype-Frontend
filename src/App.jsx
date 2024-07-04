@@ -5,6 +5,7 @@ import LandingPage from './pages/Landing'
 import Events from './pages/Events';
 import CreateEvents from './pages/CreateEvents';
 import ManageEvents from './pages/ManageEvents';
+import About from './pages/Landing/components/about';
 
 
 function App() {
@@ -28,6 +29,10 @@ function App() {
         {
           path: "manage-events",
           element: <ManageEvents/>
+        },
+        {
+          path: "about",
+          element: <About/>
         }
      
    
