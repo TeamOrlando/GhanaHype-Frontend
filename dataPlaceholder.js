@@ -25,6 +25,8 @@ export const events = [
   {
     id: "e02",
     name: "Detty Rave",
+    description: 
+    "The biggest outdoor AfroEnjoyment Rave featuring fantastic stage set-up, incredible light shows",
     image: dettyrave,
     location: "Untamed Empire",
     price: 300,
@@ -45,6 +47,8 @@ export const events = [
   {
     id: "e04",
     name: "This is Africa",
+    description: 
+    "A curated 7 day group trip full of insightful, recreational & entertaining activities across 3 cities in Ghana.",
     image: TIA,
     location: "Airport View Hotel",
     price: 4500,
@@ -55,6 +59,8 @@ export const events = [
   {
     id: "e05",
     name: "Area Code Jam",
+    description: 
+    "An Annual entertainment show held in some selected communities around the country sponsored bu Guiness Ghana.",
     image: shattawale,
     location: "Legon City Hall",
     price: 50,
@@ -106,6 +112,8 @@ export const events = [
   {
     id: "e10",
     name: "Jollofrave",
+    description: 
+    "Jollof Rave is a Food, Art and Music Festival focused on promoting Jollof and afro-heritage",
     image: jollofrave,
     location: "La Palm Royal Beach Hotel",
     price: 120,
@@ -128,5 +136,6 @@ export const events = [
     location: "Labadi Beach Hotel",
     price: 2000,
     date: "December 28 2024",
+    category: "Beach",
   },
 ];
