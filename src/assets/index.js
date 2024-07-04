@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 import heroBg from "./images/heroBg.jpg"
 import logo from "./images/logo.png"
 import about from "./images/about.jpg"
-
-export {heroBg, logo, about}
-=======
 import footerLogo from "./images/footerLogo.png"
 import fbookIcon from "./images/fbookIcon.png"
 import twitterIcon from "./images/twitterIcon.png"
@@ -16,7 +12,7 @@ import whatsappIcon from "./images/whatsappIcon.png"
 import snapchatIcon from "./images/snapchatIcon.png"
 
 
-export {footerLogo,fbookIcon,twitterIcon,igIcon,tiktokIcon,linkedinIcon,youtubeIcon,whatsappIcon,
-snapchatIcon
+export {
+    footerLogo, fbookIcon, twitterIcon, igIcon, tiktokIcon, linkedinIcon, youtubeIcon, whatsappIcon,
+    snapchatIcon, heroBg, logo, about
 };
->>>>>>> feature/elikem
