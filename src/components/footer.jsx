@@ -1,3 +1,4 @@
+import { LocateIcon } from "lucide-react"
 import {fbookIcon,footerLogo,igIcon,linkedinIcon,snapchatIcon,tiktokIcon,twitterIcon,whatsappIcon,youtubeIcon, } from "../assets"
 
 
@@ -32,7 +33,10 @@ const Footer = () => {
          <img className="h-[20px]" src={snapchatIcon} alt="" />
       </div>
       </div>
-      
+          <div>
+            <span> <LocateIcon/> </span>
+          </div>
+
     </div>
     
   )
