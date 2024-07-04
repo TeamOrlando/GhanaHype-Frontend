@@ -6,6 +6,7 @@ import Events from './pages/Events';
 import CreateEvents from './pages/CreateEvents';
 import ManageEvents from './pages/ManageEvents';
 
+
 function App() {
   const router = createBrowserRouter([
     {

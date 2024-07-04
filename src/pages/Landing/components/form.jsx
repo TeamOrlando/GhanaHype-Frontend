@@ -31,7 +31,9 @@ const Form = () => {
                     handleSubmit,
                     isSubmitting,
                 }) => (
-                    <form onSubmit={handleSubmit} className='grid grid-cols-2 gap-10'>
+                    <form onSubmit={handleSubmit} className='flex flex-col gap-y-10'>
+                        <div className='grid grid-cols-2 gap-10 w-full items-center justify-center'>
+
                         <div className='flex flex-col gap-y-4'>
                             <label className='font-semibold'>Event Name</label>
                             <input
@@ -39,29 +41,17 @@ const Form = () => {
                                 name="name"
                                 onChange={handleChange}
                                 onBlur={handleBlur}
-                                value={values.name}
+                                value={values.eventName}
                                 required
                                 className='border-2 px-4 py-2'
                                 placeholder='Enter event name'
                             />
                         </div>
-                        <div className='flex flex-col gap-y-4'>
-                            <label className='font-semibold'>Date</label>
-                            <input
-                                type="date"
-                                name="Date"
-                                onChange={handleChange}
-                                onBlur={handleBlur}
-                                value={values.date}
-                                required
-                                className='border-2 px-4 py-2'
-                                placeholder='Enter event date'
-                            />
-                        </div>
+                       
                         <div className='flex flex-col gap-y-4'>
                             <label className='font-semibold'>Price</label>
                             <input
-                                type="text"
+                                type="number"
                                 name="Price"
                                 onChange={handleChange}
                                 onBlur={handleBlur}
@@ -69,6 +59,32 @@ const Form = () => {
                                 required
                                 className='border-2 px-4 py-2'
                                 placeholder='Cost of tickets'
+                            />
+                        </div>
+                        <div className='flex flex-col gap-y-4'>
+                            <label className='font-semibold'>Start Date</label>
+                            <input
+                                type="date"
+                                name="startDate"
+                                onChange={(e) => handleChange(e.target.value)}
+                                onBlur={handleBlur}
+                                value={values.startDate}
+                                required
+                                className='border-2 px-4 py-2'
+                                placeholder='Enter event date'
+                            />
+                        </div>
+                        <div className='flex flex-col gap-y-4'>
+                            <label className='font-semibold'>End Date</label>
+                            <input
+                                type="date"
+                                name="endDate"
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                value={values.endDate}
+                                required
+                                className='border-2 px-4 py-2'
+                                placeholder='Enter event date'
                             />
                         </div>
                         <div className='flex flex-col gap-y-4'>
@@ -97,10 +113,10 @@ const Form = () => {
                                 placeholder='Location of event'
                             />
                         </div>
-
+                        </div>
 
                       
-                        <button type="submit" disabled={isSubmitting}>
+                        <button type="submit" disabled={isSubmitting} className='bg-[#C2B931] w-full font-bold py-2'>
                             Submit
                         </button>
                     </form>
