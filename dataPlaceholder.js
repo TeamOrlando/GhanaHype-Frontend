@@ -5,6 +5,11 @@ import TIA from "./src/assets/images/TIA.jpeg";
 import shattawale from "./src/assets/images/shattawale.jpg";
 import rapperholic from "./src/assets/images/rapperholic.jpg";
 import kenkey from "./src/assets/images/KFTN.jpg";
+import chalewote from "./src/assets/images/chalewote.png";
+import waakye from "./src/assets/images/waakyefestival.jpg";
+import jollofrave from "./src/assets/images/jollofrave.jpg";
+import kwahu from "./src/assets/images/kwahu.jpg";
+import polobeach from "./src/assets/images/polobeach.jpeg";
 export const events = [
   {
     id: "e01",
@@ -77,6 +82,51 @@ export const events = [
     price: 0,
     date: "July 30 2024",
     category: "Charity",
-    organizer: "Tata's & Friends    ",
+    organizer: "Tata's & Friends",
+  },
+  {
+    id: "e08",
+    name: "Chalewote Street Art",
+    image: chalewote,
+    location: "Osu Castle",
+    price: 0,
+    date: "January 6 2024",
+    catergory: "Arts",
+    organizer: "Ga's",
+  },
+  {
+    id: "e09",
+    name: "Waakye Festival",
+    image: waakye,
+    location: "Efua Sutherland Park",
+    price: 30,
+    date: "January 4 2024",
+    category: "Food",
+  },
+  {
+    id: "e10",
+    name: "Jollofrave",
+    image: jollofrave,
+    location: "La Palm Royal Beach Hotel",
+    price: 120,
+    date: "Febrary 2 2024",
+    category: "Food",
+  },
+  {
+    id: "e11",
+    name: "Kwahu Paragliding",
+    image: kwahu,
+    location: "kwahu",
+    price: 3000,
+    date: "Febrary 5 2024",
+    category: "Tour",
+  },
+  {
+    id: "e12",
+    name: "Polo Beach Party",
+    image: polobeach,
+    location: "Labadi Beach Hotel",
+    price: 2000,
+    date: "December 28 2024",
   },
 ];
