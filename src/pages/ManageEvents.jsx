@@ -21,7 +21,7 @@ const ManageEvents = () => {
 
   const handleDeleteEvent = (eventId) => {
     // Delete event logic
-    setData(data.filter(event => event.id !== eventId));
+    setData(K.EVENTS.filter(event => event.id !== eventId));
   };
 
   return (
@@ -30,12 +30,12 @@ const ManageEvents = () => {
       
       {/* List of events */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {K.EVENTS.map(event => (
+        {data.map(event => (
           <div key={event.id} className="relative">
             <EventCard data={event} />
             <div className="absolute top-2 right-2 flex gap-2">
-              <button onClick={() => handleEditEvent(event)} className="bg-blue-500 text-white p-2 rounded">Edit</button>
-              <button onClick={() => handleDeleteEvent(event.id)} className="bg-red-500 text-white p-2 rounded">Delete</button>
+              <button onClick={() => handleEditEvent(event)} className="bg-blue-500 text-white p-2 rounded hover:opacity-80">Edit</button>
+              <button onClick={() => handleDeleteEvent(event.id)} className="bg-red-500 text-white p-2 rounded hover:opacity-80">Delete</button>
             </div>
           </div>
         ))}
