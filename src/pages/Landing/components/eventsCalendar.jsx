@@ -3,6 +3,8 @@ import { useState } from "react";
 import { events } from "../../../../dataPlaceholder";
 import EventCard from "../../../components/eventCard";
 import { AnimatePresence, motion } from "framer-motion";
+import SearchBar from "../../../components/searchBar";
+import PriceFilter from "../../../components/priceFilter";
 
 const months = [
   { name: "All", value: 0 },
@@ -23,26 +25,80 @@ const months = [
 const EventsCalendar = () => {
   const [selectedButton, setSelectedButton] = useState("All");
   const [data, setData] = useState(events);
-
+  const [searchQuery, setSearchQuery] = useState("");
+  const [minPrice, setMinPrice] = useState("");
+  const [maxPrice, setMaxPrice] = useState("");
   const handleMonthChange = (name) => {
     setSelectedButton(name);
-    if (name === "All") {
-      setData(events);
-    } else {
-      const monthIndex = months.find((month) => month.name === name).value;
-      const filteredEvents = events.filter((event) => {
+    filterEvents(name, searchQuery, minPrice, maxPrice);
+  };
+
+  const handleSearchChange = (query) => {
+    setSearchQuery(query);
+    filterEvents(selectedButton, query, minPrice, maxPrice);
+  };
+
+  const handleMinPriceChange = (price) => {
+    setMinPrice(price);
+    filterEvents(selectedButton, searchQuery, price, maxPrice);
+  };
+
+  const handleMaxPriceChange = (price) => {
+    setMaxPrice(price);
+    filterEvents(selectedButton, searchQuery, minPrice, price);
+  };
+
+  const filterEvents = (month, query, minPrice, maxPrice) => {
+    let filteredEvents = events;
+
+    if (month !== "All") {
+      const monthIndex = months.find((m) => m.name === month).value;
+      filteredEvents = filteredEvents.filter((event) => {
         const eventDate = new Date(event.date);
         return eventDate.getMonth() + 1 === monthIndex;
       });
-      setData(filteredEvents);
     }
+
+    if (query) {
+      filteredEvents = filteredEvents.filter(
+        (event) =>
+          event.name.toLowerCase().includes(query.toLowerCase()) ||
+          event.location.toLowerCase().includes(query.toLowerCase())
+      );
+    }
+
+    if (minPrice) {
+      filteredEvents = filteredEvents.filter(
+        (event) => event.price >= minPrice
+      );
+    }
+
+    if (maxPrice) {
+      filteredEvents = filteredEvents.filter(
+        (event) => event.price <= maxPrice
+      );
+    }
+
+    setData(filteredEvents);
   };
 
   return (
-    <div className="container mx-auto">
-      <h2 className="text-4xl text-white font-semibold text-center">
-        Event Calendar
+    <div className="container mx-auto py-20">
+      <h2 className="text-4xl mb-10 text-white font-semibold text-center">
+        Events Calendar
       </h2>
+      <div className="grid grid-cols-2 gap-4 p-4">
+        <SearchBar
+          searchQuery={searchQuery}
+          onSearchChange={handleSearchChange}
+        />
+        <PriceFilter
+          minPrice={minPrice}
+          maxPrice={maxPrice}
+          onMinPriceChange={handleMinPriceChange}
+          onMaxPriceChange={handleMaxPriceChange}
+        />
+      </div>
       <div className="flex gap-2 align-middle justify-between items-center p-4">
         {months.map((month, index) => (
           <button
@@ -59,7 +115,7 @@ const EventsCalendar = () => {
       <div className="grid grid-cols-4 gap-8">
         <AnimatePresence>
           {data &&
-            data.map((d, ) => (
+            data.map((d) => (
               <motion.div
                 key={d.id}
                 initial={{ opacity: 0, scale: 0.9 }}

@@ -62,23 +62,22 @@ const EventCard = (props) => {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            backgroundColor: "white",
+            backgroundColor: "black",
+            color: "white",
             padding: "20px",
             borderRadius: "1rem",
             textAlign: "center",
             boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
           }}
-          className="gap-4"
+          className="gap-4 text-white"
         >
-          <p className="text-2xl font-bold text-gray-800">{props.data.name}</p>
-          <p className="text-sm text-gray-600">{props.data.description}</p>
-          <p className="text-md text-gray-800">{props.data.location}</p>
-          <p className="text-md text-gray-800">{props.data.date}</p>
-          <p className="text-lg font-semibold text-gray-800">
-            GHC{props.data.price}
-          </p>
+          <p className="text-2xl font-bold">{props.data.name}</p>
+          <p className="text-sm">{props.data.description}</p>
+          <p className="text-md">{props.data.location}</p>
+          <p className="text-md">{props.data.date}</p>
+          <p className="text-lg font-semibold">GHC{props.data.price}</p>
 
-          <button className="p-4 my-5 border-2 border-gray-600 rounded-xl hover:bg-black hover:text-white hover:border-white transition duration-300">
+          <button className="p-4 my-5 border-2 border-gray-600 rounded-xl hover:bg-white hover:text-black hover:border-white transition duration-300">
             Book
           </button>
         </motion.div>
