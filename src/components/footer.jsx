@@ -5,7 +5,7 @@ import {fbookIcon,footerLogo,igIcon,linkedinIcon,snapchatIcon,tiktokIcon,twitter
 
 const Footer = () => {
   return (
-    <div className="h-80 bg-black flex flex-col gap-x-14 relative">
+    <div className="h-80 bg-black flex flex-col gap-x-14 relative" id="contact">
       <div className="flex justify-center">
         <img className="w-36 h-16" src= {footerLogo} alt="" />
       </div>

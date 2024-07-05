@@ -83,7 +83,7 @@ const EventsCalendar = () => {
   };
 
   return (
-    <div className="container mx-auto py-20">
+    <div className="container mx-auto py-20" id="events">
       <h2 className="text-4xl mb-10 text-white font-semibold text-center">
         Events Calendar
       </h2>
