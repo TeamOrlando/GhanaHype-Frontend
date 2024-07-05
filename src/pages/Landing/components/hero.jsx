@@ -61,9 +61,14 @@ const Hero = () => {
         transition={{ duration: 0.8, delay: 1, repeat: Infinity, repeatType: "reverse" }}
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
       >
+        <Link to="about"
+            smooth={true}
+            duration={500}>
         <svg className="w-6 h-6 text-white" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
           <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
         </svg>
+        </Link>
+       
       </motion.div>
     </div>
   )

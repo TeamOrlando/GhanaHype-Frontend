@@ -1,10 +1,10 @@
 import "react-tabs-carousel/css/index.css";
 import { useState } from "react";
-import { events } from "../../../../dataPlaceholder";
 import EventCard from "../../../components/eventCard";
 import { AnimatePresence, motion } from "framer-motion";
 import SearchBar from "../../../components/searchBar";
 import PriceFilter from "../../../components/priceFilter";
+import K from "../../../constants";
 
 const months = [
   { name: "All", value: 0 },
@@ -24,7 +24,7 @@ const months = [
 
 const EventsCalendar = () => {
   const [selectedButton, setSelectedButton] = useState("All");
-  const [data, setData] = useState(events);
+  const [data, setData] = useState(K.EVENTS);
   const [searchQuery, setSearchQuery] = useState("");
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
@@ -49,7 +49,7 @@ const EventsCalendar = () => {
   };
 
   const filterEvents = (month, query, minPrice, maxPrice) => {
-    let filteredEvents = events;
+    let filteredEvents = K.EVENTS;
 
     if (month !== "All") {
       const monthIndex = months.find((m) => m.name === month).value;

@@ -1,13 +1,26 @@
 import { fbookIcon, footerLogo, igIcon, linkedinIcon, snapchatIcon, tiktokIcon, twitterIcon, whatsappIcon, youtubeIcon, } from "../assets"
-
-
+import {  useNavigate } from "react-router-dom"
+import * as Scroll from "react-scroll"
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const scroller = Scroll.scroller
+
+  const goToPageAndScroll = async (selector) => {
+    await navigate("/");
+    await scroller.scrollTo(selector, {
+      duration: 500,
+      smooth: true,
+      offset: -75,
+      spy: true
+    });
+  }
+
   return (
 
-    <div className="h-80 bg-black flex flex-col gap-x-14 relative" id="contact">
-      <div className="h-10 bg-white "></div>
-      <div className="flex justify-center">
+    <div className="h-80 bg-black flex flex-col  relative pt-10 justify-center items-center" id="contact">
+    
+      <div className="flex justify-center mb-2">
         <img className="w-36 h-16" src={footerLogo} alt="" />
       </div>
 
@@ -15,14 +28,14 @@ const Footer = () => {
         we provide unforgettable experiences showcasing the best of events. <br />
         Stay informed about upcoming events and tours. </p>
 
-      <div className="flex justify-center text-white gap-x-10 mt-12 ">
+      <div className="flex justify-center text-white gap-x-10 mt-12 mb-4">
         <span onClick={() => goToPageAndScroll("home")} className="cursor-pointer hover:text-yellow-300">Home</span>
         <span onClick={() => goToPageAndScroll("about")} className="cursor-pointer hover:text-yellow-300">About</span>
         <span onClick={() => goToPageAndScroll("events")} className="cursor-pointer hover:text-yellow-300">Events</span>
         <span onClick={() => goToPageAndScroll("contact")} className="cursor-pointer hover:text-yellow-300">Contact</span>
       </div>
 
-      <div className="h-0.5 bg-white w-4/5 ml-20"></div>
+      <div className="h-0.5 bg-white w-4/5"></div>
 
 
 

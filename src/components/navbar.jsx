@@ -1,5 +1,4 @@
 import {  useLocation, useNavigate } from "react-router-dom"
-
 import { logo } from "../assets";
 import * as Scroll from "react-scroll"
 import { Link as ScrollLink } from "react-scroll"
@@ -19,7 +18,7 @@ const Navbar = () => {
     });
   }
   return (
-    <div className="flex w-full justify-between px-16 py-6 items-center">
+    <div className="flex w-full justify-between px-16 py-6 items-center fixed z-50 bg-white">
       <span><img src={logo} alt="logo" className="h-[60px]" /></span>
       <div className="flex gap-x-10 items-center">
         {

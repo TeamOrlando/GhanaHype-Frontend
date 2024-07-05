@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Formik } from 'formik';
-// import eventCard from './EventCard';
 import EventCard from '../components/eventCard';
-import { events } from '../../dataPlaceholder';
+
 import Form from './Landing/components/form';
+import K from '../constants';
 
 const ManageEvents = () => {
-  const [data, setData] = useState(events);
+  const [data, setData] = useState(K.EVENTS);
   const [editingEvent, setEditingEvent] = useState(null);
 
   useEffect(() => {
@@ -25,12 +25,12 @@ const ManageEvents = () => {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-40">
       <h1 className="text-2xl font-bold mb-4">Manage Events</h1>
       
       {/* List of events */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {data.map(event => (
+        {K.EVENTS.map(event => (
           <div key={event.id} className="relative">
             <EventCard data={event} />
             <div className="absolute top-2 right-2 flex gap-2">
