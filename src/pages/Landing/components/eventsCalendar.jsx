@@ -39,7 +39,7 @@ const EventsCalendar = () => {
   };
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto" id="events">
       <h2 className="text-4xl text-white font-semibold text-center">
         Event Calendar
       </h2>

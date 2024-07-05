@@ -20,7 +20,7 @@ const Navbar = () => {
   }
   return (
     <div className="flex w-full justify-between px-16 py-6 items-center">
-      <span><img src={logo} alt="logo" className="h-[45px]" /></span>
+      <span><img src={logo} alt="logo" className="h-[60px]" /></span>
       <div className="flex gap-x-10 items-center">
         {
           pathname == "/" ? <>

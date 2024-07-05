@@ -1,4 +1,4 @@
-import heroBg from "./images/heroBg.jpg"
+import heroBg from "./images/herobg.jpg"
 import logo from "./images/logo.png"
 import about from "./images/about.jpg"
 import footerLogo from "./images/footerLogo.png"
@@ -10,9 +10,11 @@ import linkedinIcon from "./images/linkedinIcon.png"
 import youtubeIcon from "./images/youtubeIcon.png"
 import whatsappIcon from "./images/whatsappIcon.png"
 import snapchatIcon from "./images/snapchatIcon.png"
+import aboutUs from "./images/aboutUs.jpeg"
+
 
 
 export {
     footerLogo, fbookIcon, twitterIcon, igIcon, tiktokIcon, linkedinIcon, youtubeIcon, whatsappIcon,
-    snapchatIcon, heroBg, logo, about
+    snapchatIcon, heroBg, logo, about, aboutUs
 };

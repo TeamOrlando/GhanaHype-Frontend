@@ -1,11 +1,32 @@
 import { Formik } from 'formik';
+import { useState } from 'react';
 
-const Form = () => {
+const Form = (props) => {
+    console.log(props.data)
+    const [event, setEvent] = useState(props.data)
+    /**
+     *  {
+    id: "e01",
+    name: "Ghana World Music",
+    description: "",
+    image: samini,
+    location: "Fantasy Dome",
+    price: 200,
+    date: "December 22 2024",
+    category: "Music",
+    organizer: "Loretta",
+  },*/ 
     return (
         <div>
 
             <Formik
-                initialValues={{ name: '', date: '' }}
+                initialValues={{ 
+                    eventName:props.data?.name || '', 
+                    startDate: props.data?.date || '',
+                    endDate: props.data?.date || '',
+                    price: props.data?.price || '',
+                    location: props.data?.location || '',
+                 }}
                 //    validate={values => {
                 //      const errors = {};
                 //      if (!values.name) {
@@ -62,7 +83,7 @@ const Form = () => {
                             />
                         </div>
                         <div className='flex flex-col gap-y-4'>
-                            <label className='font-semibold'>Start Date</label>
+                            <label className='font-semibold'>Date</label>
                             <input
                                 type="date"
                                 name="startDate"
@@ -74,19 +95,7 @@ const Form = () => {
                                 placeholder='Enter event date'
                             />
                         </div>
-                        <div className='flex flex-col gap-y-4'>
-                            <label className='font-semibold'>End Date</label>
-                            <input
-                                type="date"
-                                name="endDate"
-                                onChange={handleChange}
-                                onBlur={handleBlur}
-                                value={values.endDate}
-                                required
-                                className='border-2 px-4 py-2'
-                                placeholder='Enter event date'
-                            />
-                        </div>
+                       
                         <div className='flex flex-col gap-y-4'>
                             <label className='font-semibold'>Location</label>
                             <input
