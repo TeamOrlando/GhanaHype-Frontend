@@ -30,7 +30,7 @@ const ManageEvents = () => {
       
       {/* List of events */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {K.EVENTS.map(event => (
+        {data.map(event => (
           <div key={event.id} className="relative">
             <EventCard data={event} />
             <div className="absolute top-2 right-2 flex gap-2">
