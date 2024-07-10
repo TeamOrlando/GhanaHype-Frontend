@@ -14,7 +14,7 @@ const Footer = () => {
       offset: -75,
       spy: true
     });
-  }
+  } 
 
   return (
 
